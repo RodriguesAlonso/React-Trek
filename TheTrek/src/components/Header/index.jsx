@@ -1,9 +1,13 @@
 import styled from "styled-components"
 
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.header `
+
 background-color:#85F2B4;
+color: 7777eb;
 max-width: 500px
+
+
 `
 
 const Header = () => {
