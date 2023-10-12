@@ -18,10 +18,15 @@ const StyledLesson01 = styled.header `
         background-color: #7777eb;    
         width:100%;
     }
-    
+    button{
+        background-color: #7777eb;
+    }
+    a{
+        color:white;
+    }
 
 `
-const Wrapper = styled.div`    
+const Wrapper = styled.div `    
     color: #741BA1;
     display: flex;      
     flex-wrap: wrap;
@@ -90,45 +95,50 @@ const Lesson01 = () => {
         <>
             <StyledLesson01>
                 <h1>MAP</h1>
-                <button><a href="/"> HOME</a></button>
+                <button>
+                    <a href="/">HOME</a>
+                </button>
                 <Wrapper>
                     <article>
-                    <h2>Summary</h2>
-                    <cite>
-                    <q> The map() method is an iterative method. It calls a provided callbackFn function once for each element in an array and constructs a new array from the results. <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">(developer.mozilla)</a></q>
-                    </cite>
-                                </article>
-                                
-                                <StyledTable>
-                    <table>
-                        <caption>My Crew</caption>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Profession</th>
-                                <th>age</th>
-                            </tr>
-                        </thead>
-                        <tbody> {
-                            crew.map((member) => (
+                        <h2>Summary</h2>
+                        <cite>
+                            <q>
+                                The map() method is an iterative method. It calls a provided callbackFn function once for each element in an array and constructs a new array from the results.
+                                <a target="blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">(developer.mozilla)</a>
+                            </q>
+                        </cite>
+                    </article>
+
+                    <StyledTable>
+                        <table>
+                            <caption>My Crew</caption>
+                            <thead>
                                 <tr>
-                                    <td>{
-                                        member.Name
-                                    }</td>
-                                    <td>{
-                                        member.Profession
-                                    }</td>
-                                    <td>{
-                                        member.Age
-                                    }</td>
+                                    <th>Name</th>
+                                    <th>Profession</th>
+                                    <th>age</th>
                                 </tr>
-                            ))
-                        } </tbody>
-                    </table>
-                                </StyledTable>
-                                <section>
-                    <p>Here, there is a mapping (using .map()) of the crew array to create rows in the table. Each member object in the crew array is mapped to a row in the table, where the Name, Profession and Age properties are inserted into the corresponding cells.</p>
-                                </section>
+                            </thead>
+                            <tbody> {
+                                crew.map((member, index) => (
+                                    <tr key={index}>
+                                        <td>{
+                                            member.Name
+                                        }</td>
+                                        <td>{
+                                            member.Profession
+                                        }</td>
+                                        <td>{
+                                            member.Age
+                                        }</td>
+                                    </tr>
+                                ))
+                            } </tbody>
+                        </table>
+                    </StyledTable>
+                    <section>
+                        <p>Here, there is a mapping (using .map()) of the crew array to create rows in the table. Each member object in the crew array is mapped to a row in the table, where the Name, Profession and Age properties are inserted into the corresponding cells.</p>
+                    </section>
                 </Wrapper>
             </StyledLesson01>
 
